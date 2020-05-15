@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Headspace Code Challenge</string>
+    <string name="txt_retry">Retry</string>
+    <string name="refresh">Refresh</string>
+    <string name="tools_author">Author</string>
+    <string name="tools_dimen">HHHH x WWWW</string>
+    <string name="defaultContDesc">Image</string>
+    <string name="artist">Artist:</string>
+</resources>

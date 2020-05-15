@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.headspacecodechallenge.R
 import com.example.headspacecodechallenge.db.ImageDatabase
 import com.example.headspacecodechallenge.db.entites.ImageEntry
@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        rvImages.layoutManager = LinearLayoutManager(this)
+        rvImages.layoutManager = GridLayoutManager(this, 2)
         imageAdapter = ImageAdapter(mutableListOf())
         rvImages.adapter = imageAdapter
     }

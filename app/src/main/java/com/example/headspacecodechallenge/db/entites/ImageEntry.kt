@@ -8,6 +8,9 @@ import com.example.headspacecodechallenge.model.ImageItem
 @Entity(tableName = "imageTable")
 class ImageEntry(
     @PrimaryKey(autoGenerate = false)
+    @ColumnInfo(name = "id")
+    var id: String,
+
     @ColumnInfo(name = "url")
     var url: String,
 
@@ -23,9 +26,10 @@ class ImageEntry(
     @ColumnInfo(name = "download_url")
     var download_url: String
 ) {
-    constructor() : this("", "", 0, 0, "")
+    constructor() : this("", "", "", 0, 0, "")
 
     fun getImageEntryFromResponse(response: ImageItem): ImageEntry {
+        this.id = response.id
         this.url = response.url
         this.author = response.author
         this.width = response.width

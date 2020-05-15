@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/cardBack"
+    app:cardCornerRadius="14dp"
     app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/cardBack">
+        android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/image"

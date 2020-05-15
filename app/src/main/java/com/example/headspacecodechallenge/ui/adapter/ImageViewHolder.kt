@@ -16,7 +16,7 @@ class ImageViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         // load image
         Glide.with(itemView)
             .load(image.download_url)
-            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(itemView.image)
         itemView.setOnClickListener {
             if (itemView.imageAuthor.visibility == View.GONE) {

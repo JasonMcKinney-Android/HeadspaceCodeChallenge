@@ -1,6 +1,8 @@
 package com.example.headspacecodechallenge.ui.main
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initRecycerView()
+        initRecyclerView()
 
         createDBInstance()
 
@@ -100,9 +102,24 @@ class MainActivity : AppCompatActivity() {
         imageDatabase = ImageDatabase.getInstance(application)
     }
 
-    private fun initRecycerView() {
+    private fun initRecyclerView() {
         rvImages.layoutManager = LinearLayoutManager(this)
         imageAdapter = ImageAdapter(mutableListOf())
         rvImages.adapter = imageAdapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_refresh -> {
+                viewModel.getImages(pageCounter)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
